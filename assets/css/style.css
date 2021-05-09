@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}
+
+body {
+    background-color: rgb(212, 119, 76);
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ELEMENTS DU JEU */
+
+.perso {
+    width: 40%;
+    height: 120px;
+    position: absolute;
+    bottom: 20%;
+    left: 30%;
+}
+.perso-img {
+    width: 100%;
+    height: 100%;
+}
+
+.rock {
+    width: 20%;
+    height: 15%;
+    position: absolute;
+    top: 20%;
+    left: 40%;
+
+    animation-duration: 1s;
+    animation-name: falling;
+}
+
+@keyframes falling {
+    0% {
+        top: 20%;
+        transform: rotate(0deg);
+    }
+    100% {
+        top: 60%;
+        transform: rotate(360deg);
+    }
+}
+
+.heart {
+    width: 30px;
+    height: 25px;
+    margin-top: 2%;
+    margin-left: 2%;
+}
+
+.life {
+    position: absolute;
+    top: 6px;
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.chest {
+    width: 40%;
+    height: 100px;
+    position: absolute;
+    bottom: 20%;
+    left: 30%;
+}
+
+.endgame {
+    color: maroon;
+    font-size: larger;
+    animation-name: endgame;
+    animation-duration: 1.5s;
+}
+
+@keyframes endgame {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+    
+}
+/* ECRAN */
+
+.screen-game {
+    background: url("../img/background.jpg");
+    background-repeat: repeat-x;
+    width: 100%;
+    height: 400px;
+}
+
+.cut-screen {
+    display: flex;
+}
+
+.cut-div {
+    position: relative;
+    height: 400px;
+}
+
+/* DETAILS */
+
+.details {
+    position: absolute;
+    bottom: 35%;
+    color: white;
+    font-weight: bolder;
+}
+
+/* BOUTONS */
+
+.btn-container {
+    position: absolute;
+    bottom: 2%;
+}
+
+.keybord {
+    margin-top: 10px;
+}
+
+.btn {
+    border: unset;
+    padding : 10px 20px;
+    border-radius: 10px;
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
+    color: white;
+    background-color: rgb(100, 149, 100);
+}
+
+.btn-start {
+    border: unset;
+    margin-top: 2rem;
+    margin-right: 1rem;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
+    color: white;
+    background-color: rgb(100, 149, 100);
+}
+
+.btn:active, .btn-start:active {
+    box-shadow: unset;
+    transform: translateY(3px);
+}
+
+.btn:disabled, .btn-start:disabled {
+    background-color: grey;
+    box-shadow: unset;
+}
+
+
+
+
+/* Media Queries 
+
+@media screen and (max-width: 700px) {
+
+    * {
+        font-size: 1.2rem;
+    }
+    
+    .screen-game {
+        display: none;
+    }
+
+    .keybord {
+        display: block;
+        margin: 10px;
+    }
+    .btn {
+        margin: 5px;
+    }
+    .btn-start-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}*/
